@@ -1,0 +1,10931 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html lang="en">
+
+
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+ <meta charset="UTF-8">
+
+
+
+
+
+
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+ <title>my mart</title>
+
+
+
+
+
+
+
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+ <link href="styles.css" rel="stylesheet">
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+
+
+
+
+
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
+
+
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+
+
+
+
+
+
+
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+ <!-- Add this line in the <head> section of your HTML file -->
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+
+
+
+ <style>
+
+
+
+
+
+
+
+body{
+
+
+
+
+
+
+
+	overflow-x: hidden;
+
+
+
+
+
+
+
+	background-color:#f9f8f4;
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+ .navbar {
+
+
+
+
+
+
+
+ background-color: #ADD8E6;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .jumbotron {
+
+
+
+
+
+
+
+ background-color: #f8f9fa; 
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .btn-primary {
+
+
+
+
+
+
+
+ background-color: #007bff;
+
+
+
+
+
+
+
+ border-color: #007bff;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .btn-primary:hover {
+
+
+
+
+
+
+
+ background-color: #0056b3; 
+
+
+
+
+
+
+
+ border-color: #0056b3;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .card-body {
+
+
+
+
+
+
+
+ background-color: #fff; 
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .card-body:hover {
+
+
+
+
+
+
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .navbar-nav {
+
+
+
+
+
+
+
+ display: flex;
+
+
+
+
+
+
+
+ list-style: none;
+
+
+
+
+
+
+
+ padding: 0;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .nav-item {
+
+
+
+
+
+
+
+ position: relative;
+
+
+
+
+
+
+
+ margin-right: 10px; 
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .dropdown {
+
+
+
+
+
+
+
+ position: relative;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .dropdown-menu {
+
+
+
+
+
+
+
+ display: none;
+
+
+
+
+
+
+
+ position: absolute;
+
+
+
+
+
+
+
+ top: 100%;
+
+
+
+
+
+
+
+ left: 0;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+.nav-item:hover .dropdown-menu {
+
+
+
+
+
+
+
+display: block;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .dropdown-submenu {
+
+
+
+
+
+
+
+ position: relative;
+
+
+
+
+
+
+
+ padding-bottom:15px;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .dropdown-submenu .dropdown-menu {
+
+
+
+
+
+
+
+ top: 0;
+
+
+
+
+
+
+
+ left: 100%;
+
+
+
+
+
+
+
+ margin-top: -1px;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+.dropdown-item:hover {
+
+
+
+
+
+
+
+ background-color: aliceblue;
+
+
+
+
+
+
+
+ color:black;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+ #backToTopBtn {
+
+
+
+
+
+
+
+ display: none; /* Hide the button by default */
+
+
+
+
+
+
+
+ position: fixed;
+
+
+
+
+
+
+
+ bottom: 20px;
+
+
+
+
+
+
+
+ right: 30px;
+
+
+
+
+
+
+
+ z-index: 99;
+
+
+
+
+
+
+
+ font-size: 18px;
+
+
+
+
+
+
+
+ border: none;
+
+
+
+
+
+
+
+ outline: none;
+
+
+
+
+
+
+
+ background-color: #232f3e; /* Match your footer background color */
+
+
+
+
+
+
+
+ color: white;
+
+
+
+
+
+
+
+ cursor: pointer;
+
+
+
+
+
+
+
+ padding: 15px;
+
+
+
+
+
+
+
+ border-radius: 4px;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+ #backToTopBtn:hover {
+
+
+
+ background-color: #444; /* Darker background color on hover */
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+.footer {
+
+
+
+
+
+
+
+ background-image:url("images/bg.png");
+
+
+
+
+
+
+
+ background-size: cover; /* Adjusts the background image to cover the entire element */
+
+
+
+
+
+
+
+ background-repeat: no-repeat; /* Prevents the background image from repeating */
+
+
+
+
+
+
+
+ color:white;
+
+
+
+
+
+
+
+ padding: 30px 0;
+
+
+
+
+
+
+
+ margin-bottom: -30px;
+
+
+
+
+
+
+
+ height: auto;
+
+
+
+
+
+
+
+ text-decoration:none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+ #footer-link a {
+
+
+
+
+
+
+
+ text-decoration: none; /* Remove underline */
+
+
+
+
+
+
+
+ color: white; /* Set font color to white */
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ #footer-link a:hover {
+
+
+
+
+
+
+
+ text-decoration: none; /* Remove underline on hover */
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+#foot a {
+
+
+
+
+
+
+
+ text-decoration: none; /* Remove underline */
+
+
+
+
+
+
+
+ color: white; /* Set font color to white */
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ #foot a:hover {
+
+
+
+
+
+
+
+ text-decoration: none; /* Remove underline on hover */
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+.col-md-4 {
+
+
+
+
+
+
+
+ position: relative;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.mt-5 {
+
+
+
+
+
+
+
+ top: 70px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.col-md-4 .list-unstyled {
+
+
+
+
+
+
+
+ display: flex;
+
+
+
+
+
+
+
+ flex-wrap: wrap;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.col-md-4 .list-unstyled li {
+
+
+
+
+
+
+
+ margin-right: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+ul li {
+
+
+
+
+
+
+
+ list-style-type: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.footer1 {
+
+
+
+
+
+
+
+ text-align: center;
+
+
+
+
+
+
+
+ font-size: 18px;
+
+
+
+
+
+
+
+ padding: 30px 0; /* Reduce the top and bottom padding */
+
+
+
+
+
+
+
+ margin-top: -30px; /* Remove the top margin */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.col-md-12 .list-unstyled {
+
+
+
+
+
+
+
+ display: flex;
+
+
+
+
+
+
+
+ flex-wrap: wrap;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.col-md-12 .list-unstyled li {
+
+
+
+
+
+
+
+ margin-right: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+ /* languages banned hide css */
+
+
+
+
+
+
+
+.goog-te-banner-frame {
+
+
+
+
+
+
+
+ display:none !important
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ .skiptranslate {
+
+
+
+
+
+
+
+ display:none !important
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ body {
+
+
+
+
+
+
+
+ top: 0px !important; 
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/* location css */
+
+
+
+
+
+
+
+#addressContainer {
+
+
+
+
+
+
+
+	display: none;
+
+
+
+
+
+
+
+	position: absolute;
+
+
+
+
+
+
+
+top: calc(100% + 3px);
+
+
+
+
+
+
+
+	right: 80px;
+
+
+
+
+
+
+
+	width: 200px;
+
+
+
+
+
+
+
+	background-color: #f4f4f4;
+
+
+
+
+
+
+
+	padding: 10px;
+
+
+
+
+
+
+
+	border-radius: 5px;
+
+
+
+
+
+
+
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+
+
+
+
+
+	font-size: 14px;
+
+
+
+
+
+
+
+	z-index: 999;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:767px){
+
+
+
+
+
+
+
+.collapse navbar-collapse{
+
+
+
+
+
+
+
+width:50%;
+
+
+
+
+
+
+
+margin-bottom:30px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/* deals */
+
+
+
+
+
+
+
+.deals .deals-row {
+
+
+
+
+
+
+
+ display: flex;
+
+
+
+
+
+
+
+ flex-wrap: wrap; /* Allow items to wrap to the next row */
+
+
+
+
+
+
+
+ justify-content: space-between; /* Evenly distribute items along the row */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.deals .focus-grid {
+
+
+
+
+
+
+
+ width: calc(25% - 20px); /* Adjust width to fit 4 items in a row */
+
+
+
+
+
+
+
+ margin-bottom: 20px; /* Add some space between rows */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.focus-grid a {
+
+
+
+
+
+
+
+ color: #6495ed;
+
+
+
+
+
+
+
+ text-align: center;
+
+
+
+
+
+
+
+ padding: 2em 0;
+
+
+
+
+
+
+
+} 
+
+
+
+
+
+
+
+.focus-grid a.wthree-btn.wthree1 {
+
+
+
+
+
+
+
+ color: #ff4500;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.focus-grid a.wthree-btn.wthree2 {
+
+
+
+
+
+
+
+ color: #00b300;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.focus-grid a.wthree-btn.wthree3 {
+
+
+
+
+
+
+
+ color: #E91E63;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.focus-grid a.wthree-btn.wthree4 {
+
+
+
+
+
+
+
+ color: #a94442;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.focus-grid a.wthree-btn.wthree5 {
+
+
+
+
+
+
+
+ color: #f15cf1;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.wthree-btn { 
+
+
+
+
+
+
+
+ position: relative;
+
+
+
+
+
+
+
+ display: block;
+
+
+
+
+
+
+
+ margin: 1em auto;
+
+
+
+
+
+
+
+ width: 100%; 
+
+
+
+
+
+
+
+ text-transform: uppercase;
+
+
+
+
+
+
+
+ overflow: hidden;
+
+
+
+
+
+
+
+ border-radius: 50%; /* Make border circular */
+
+
+
+
+
+
+
+ border: 1px solid #56259b; /* Set border to transparent to avoid square border */
+
+
+
+
+
+
+
+} 
+
+
+
+
+
+
+
+.wthree-btn:hover {
+
+
+
+ border-color: blue; /* Change border color on hover */
+
+
+
+}
+
+
+
+
+
+
+
+.focus-image i.fa {
+
+
+
+ font-size: 3em; 
+
+
+
+}
+
+
+
+
+
+
+
+h4.clrchg {
+
+
+
+ font-size: 1.1em;
+
+
+
+ margin-top: 1em;
+
+
+
+} 
+
+
+
+/*-- deals-effect --*/
+
+
+
+@-webkit-keyframes criss-cross-left {
+
+
+
+ 0% {
+
+
+
+ left: -20px;
+
+
+
+ }
+
+
+
+ 50% {
+
+
+
+ left: 50%;
+
+
+
+ width: 20px;
+
+
+
+ height: 20px;
+
+
+
+ }
+
+
+
+
+
+
+
+ 100% {
+
+
+
+ left: 50%;
+
+
+
+ width: 375px;
+
+
+
+ height: 375px;
+
+
+
+ }
+
+
+
+}
+
+
+
+
+
+
+
+@keyframes criss-cross-left {
+
+
+
+ 0% {
+
+
+
+ left: -20px;
+
+
+
+ }
+
+
+
+
+
+
+
+ 50% {
+
+
+
+ left: 50%;
+
+
+
+ width: 20px;
+
+
+
+ height: 20px;
+
+
+
+ }
+
+
+
+ 100% {
+
+
+
+ left: 50%;
+
+
+
+ width: 375px;
+
+
+
+ height: 375px;
+
+
+
+ }
+
+
+
+}
+
+
+
+@-webkit-keyframes criss-cross-right {
+
+
+
+ 0% {
+
+
+
+ right: -20px;
+
+
+
+ }
+
+
+
+ 50% {
+
+
+
+ right: 50%;
+
+
+
+ width: 20px;
+
+
+
+ height: 20px;
+
+
+
+ }
+
+
+
+ 100% {
+
+
+
+ right: 50%;
+
+
+
+ width: 375px;
+
+
+
+ height: 375px;
+
+
+
+ }
+
+
+
+}
+
+
+
+@keyframes criss-cross-right {
+
+
+
+ 0% {
+
+
+
+ right: -20px;
+
+
+
+ }
+
+
+
+ 50% {
+
+
+
+ right: 50%;
+
+
+
+
+
+
+
+ width: 20px;
+
+
+
+
+
+
+
+ height: 20px;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ 100% {
+
+
+
+
+
+
+
+ right: 50%;
+
+
+
+
+
+
+
+ width: 375px;
+
+
+
+
+
+
+
+ height: 375px;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+}
+
+
+
+.wthree-btn:before, .wthree-btn:after {
+
+
+
+position: absolute;
+
+
+
+top: 50%;
+
+
+
+content: '';
+
+
+
+width: 20px;
+
+
+
+height: 20px;
+
+
+
+background: red;
+
+
+
+-webkit-border-radius: 50%;
+
+
+
+-moz-border-radius: 50%;
+
+
+
+-o-border-radius: 50%;
+
+
+
+-ms-border-radius: 50%;
+
+
+
+border-radius: 50%;
+
+
+
+z-index: -1;
+
+
+
+transition:.5s all;
+
+
+
+}
+
+
+
+
+
+
+
+.wthree-btn:before {
+
+
+
+left: -20px;
+
+
+
+-webkit-transform: translate(-50%, -50%);
+
+
+
+-moz-transform: translate(-50%, -50%);
+
+
+
+-o-transform: translate(-50%, -50%);
+
+
+
+-ms-transform: translate(-50%, -50%);
+
+
+
+transform: translate(-50%, -50%); 
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.wthree-btn:after {
+
+
+
+right: -20px;
+
+
+
+-webkit-transform: translate(50%, -50%);
+
+
+
+-moz-transform: translate(50%, -50%);
+
+
+
+-o-transform: translate(50%, -50%);
+
+
+
+-ms-transform: translate(50%, -50%);
+
+
+
+transform: translate(50%, -50%); 
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.wthree-btn:hover {
+
+
+
+color: #f5f5f5 !important;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.wthree-btn:hover:before {
+
+
+
+-webkit-animation: criss-cross-left 0.8s both;
+
+
+
+-moz-animation: criss-cross-left 0.8s both;
+
+
+
+-o-animation: criss-cross-left 0.8s both;
+
+
+
+-ms-animation: criss-cross-left 0.8s both;
+
+
+
+animation: criss-cross-left 0.8s both;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.wthree-btn:hover:after {
+
+
+
+-webkit-animation: criss-cross-right 0.8s both;
+
+
+
+-moz-animation: criss-cross-right 0.8s both;
+
+
+
+-o-animation: criss-cross-right 0.8s both;
+
+
+
+-ms-animation: criss-cross-right 0.8s both;
+
+
+
+animation: criss-cross-right 0.8s both;
+
+
+
+
+
+
+
+} 
+
+
+
+
+
+
+
+/*-- footer-top --*/ 
+
+
+
+
+
+
+
+.w3agile-ftr-top .ftr-toprow {
+
+
+
+
+
+
+
+display: flex; /* Use flexbox */
+
+
+
+justify-content: space-between; /* Distribute items evenly */
+
+
+
+align-items: center; /* Center items vertically */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.ftr-top-grids {
+
+
+
+
+
+
+
+ flex: 1; /* Allow items to grow to fill the available space */
+
+
+
+display: flex;
+
+
+
+align-items: center; /* Center items vertically */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.ftr-top-left,
+
+
+
+
+
+
+
+.ftr-top-right {
+
+
+
+
+
+
+
+ flex: 1; /* Allow items to grow to fill the available space */
+
+
+
+text-align: center;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.ftr-top-left i.fa {
+
+
+
+font-size: 2.5em;
+
+
+
+border: 1px solid; 
+
+
+
+color: #176aff;
+
+
+
+width: 70px;
+
+
+
+height: 70px;
+
+
+
+text-align: center;
+
+
+
+line-height: 2;
+
+
+
+border-radius: 50%;
+
+
+
+transition: .5s all;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.ftr-top-right h4 {
+
+
+
+
+
+
+
+ font-size: 1.4em;
+
+
+
+
+
+
+
+ font-family: 'Offside', cursive;
+
+
+
+
+
+
+
+ margin-bottom: 0.5em;
+
+
+
+
+
+
+
+ color: #fff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.ftr-top-grids:hover i.fa {
+
+
+
+
+
+
+
+ color: #fff;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+p {
+
+
+
+
+
+
+
+ font-size: 1em;
+
+
+
+
+
+
+
+ color: #999;
+
+
+
+
+
+
+
+ line-height: 1.8em;
+
+
+
+
+
+
+
+}
+
+
+
+.w3agile-ftr-top {
+
+
+
+padding: 4em 0;
+
+
+
+background: url("/images/bg1.jpg")no-repeat center 0px;
+
+
+
+background-size: cover; 
+
+
+
+}
+
+
+
+
+
+
+
+.ftr-top-left {
+
+
+
+float: left; 
+
+
+
+}
+
+
+
+
+
+
+
+.ftr-top-right{
+
+
+
+float: right;
+
+
+
+width: 72%;
+
+
+
+}
+
+
+
+
+
+
+
+.ftr-top-left i.fa {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ font-size: 2.5em;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ border: 1px solid; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ color: #176aff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ width: 70px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ height: 70px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ text-align: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ line-height: 2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-webkit-transition:.5s all;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-moz-transition:.5s all;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-o-transition:.5s all;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-ms-transition:.5s all;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	transition:.5s all;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-webkit-border-radius: 50%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -moz-border-radius: 50%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -o-border-radius: 50%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -ms-border-radius: 50%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ border-radius: 50%;
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ftr-top-left i.fa.fa-user{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	color: #00c57e;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ftr-top-left i.fa.fa-thumbs-o-up{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	color: #fb4602;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ftr-top-right h4 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ font-size: 1.4em;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ font-family: 'Offside', cursive;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ margin-bottom: 0.5em;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ color: #fff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ftr-top-grids:hover i.fa {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ color: #fff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-- //footer-top --*/ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Top carousel */
+
+
+
+.carousel-control-prev,
+
+
+
+.carousel-control-next {
+
+
+
+ display: none;
+
+
+
+}
+
+
+
+
+
+
+
+/* Mini nav */
+
+
+
+.w3ls_logo_products_left h1 {
+
+
+
+ margin: 0;
+
+
+
+ padding: 20px 0;
+
+
+
+}
+
+
+
+
+
+
+
+.phone_email {
+
+
+
+ text-align: center;
+
+
+
+ margin-top: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.phone_email li {
+
+
+
+ color: white;
+
+
+
+}
+
+
+
+
+
+
+
+.navbar,
+
+
+
+.logo_products {
+
+
+
+ margin-bottom: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.logo_products {
+
+
+
+ padding-top: 10px;
+
+
+
+ margin-bottom: 0;
+
+
+
+ padding-bottom: 10px;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel {
+
+
+
+ margin-top: 0;
+
+
+
+}
+
+
+
+
+
+
+
+/* Last carousel */
+
+
+
+.carousel-inner1 {
+
+
+
+ transition: transform 0.1s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel-item1 {
+
+
+
+ height: 300px;
+
+
+
+ background-size: cover;
+
+
+
+}
+
+
+
+
+
+
+
+.navbar-nav .nav-link {
+
+
+
+ font-weight: bold;
+
+
+
+}
+
+
+
+
+
+
+
+.nav-link {
+
+
+
+ color: #DC143C !important;
+
+
+
+}
+
+
+
+
+
+
+
+/* Cards */
+
+
+
+.card-container1 {
+
+
+
+ display: flex;
+
+
+
+ justify-content: center; /* Center the cards */
+
+
+
+ align-items: center;
+
+
+
+ margin-top: 50px;
+
+
+
+ margin-right:5px;
+
+
+
+ flex-wrap: wrap; /* Wrap cards to the next line */
+
+
+
+ gap: 65px; /* Remove gaps between cards */
+
+
+
+}
+
+
+
+
+
+
+
+.card1 {
+
+
+
+ width: 300px;
+
+
+
+ height: 400px;
+
+
+
+ background-color: #fff;
+
+
+
+ border-radius: 10px;
+
+
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+
+ transition: transform 0.3s ease;
+
+
+
+ overflow: hidden;
+
+
+
+ margin: 10px; /* Add margin to control spacing between cards */
+
+
+
+}
+
+
+
+
+
+
+
+.card1:hover {
+
+
+
+ transform: translateY(-10px);
+
+
+
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+
+
+}
+
+
+
+
+
+
+
+.card-img-top {
+
+
+
+ width: 100%;
+
+
+
+ height: 200px;
+
+
+
+ object-fit: cover;
+
+
+
+}
+
+
+
+
+
+
+
+.card-body {
+
+
+
+ padding: 20px;
+
+
+
+ margin-left: 0px;
+
+
+
+}
+
+
+
+
+
+
+
+.card-title {
+
+
+
+ font-size: 24px;
+
+
+
+ margin-bottom: 10px;
+
+
+
+}
+
+
+
+
+
+
+
+.card-text {
+
+
+
+ font-size: 16px;
+
+
+
+}
+
+
+
+
+
+
+
+/* Container2 styles */
+
+
+
+.container2 {
+
+
+
+ display: flex;
+
+
+
+ justify-content: space-around;
+
+
+
+ flex-wrap: wrap;
+
+
+
+ max-width: 1200px;
+
+
+
+ margin: 0 auto;
+
+
+
+}
+
+
+
+
+
+
+
+.card {
+
+
+
+ position: relative;
+
+
+
+ width: 300px;
+
+
+
+ height: 300px;
+
+
+
+ overflow: hidden;
+
+
+
+ margin: 20px;
+
+
+
+ border-radius: 10px;
+
+
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+
+ transition: transform 0.3s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.card:hover {
+
+
+
+ transform: scale(1.05);
+
+
+
+}
+
+
+
+
+
+
+
+.card img {
+
+
+
+ width: 100%;
+
+
+
+ height: 100%;
+
+
+
+ object-fit: cover;
+
+
+
+}
+
+
+
+
+
+
+
+.card-content {
+
+
+
+ position: absolute;
+
+
+
+ bottom: 0;
+
+
+
+ left: 0;
+
+
+
+ right: 0;
+
+
+
+ background-color: rgba(0, 0, 0, 0.7);
+
+
+
+ color: #fff;
+
+
+
+ padding: 10px;
+
+
+
+ transition: opacity 0.3s ease;
+
+
+
+ opacity: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.card:hover .card-content {
+
+
+
+ opacity: 1;
+
+
+
+}
+
+
+
+
+
+
+
+.card-content a {
+
+
+
+ color: #fff;
+
+
+
+ text-decoration: none;
+
+
+
+}
+
+
+
+
+
+
+
+/* Custom styles for carousel */
+
+
+
+.carousel-inner {
+
+
+
+ transition: transform 0.5s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel-item {
+
+
+
+ height: 375px;
+
+
+
+ background-size: cover;
+
+
+
+}
+
+
+
+
+
+
+
+.big-container {
+
+
+
+ height: 400px;
+
+
+
+ overflow: hidden;
+
+
+
+ border: 2px solid #ddd;
+
+
+
+ border-radius: 10px;
+
+
+
+ padding: 20px;
+
+
+
+ margin-bottom: 0px;
+
+
+
+ background-color: white;
+
+
+
+ position: relative; /* Added to ensure proper positioning */
+
+
+
+ background-size: cover; /* Added to ensure background image covers the container */
+
+
+
+ background-position: center; /* Added to center the background image */
+
+
+
+}
+
+
+
+
+
+
+
+.container-heading {
+
+
+
+ text-align: center;
+
+
+
+ margin-bottom: 10px;
+
+
+
+ color: #333; /* Ensure text is visible on different backgrounds */
+
+
+
+ background: rgba(255, 255, 255, 0.8); /* Slight background for better readability */
+
+
+
+ display: inline-block; /* Adjust display to fit the text */
+
+
+
+ padding: 0 10px; /* Padding for better appearance */
+
+
+
+ border-radius: 5px; /* Rounded corners */
+
+
+
+}
+
+
+
+
+
+
+
+.card-container {
+
+
+
+ display: flex;
+
+
+
+ justify-content: space-around;
+
+
+
+ flex-wrap: wrap;
+
+
+
+}
+
+
+
+
+
+
+
+.card {
+
+
+
+ width: 200px;
+
+
+
+ margin-bottom: 20px; /* Adjusted for spacing between cards */
+
+
+
+ transition: transform 0.1s ease;
+
+ 
+
+ overflow: hidden; /* Ensure content stays within the card */
+
+
+
+ background: white; /* Added background color for cards */
+
+
+
+ border: 1px solid #ddd; /* Added border for better distinction */
+
+
+
+ border-radius: 10px; /* Rounded corners for cards */
+
+
+
+ text-align: center; /* Center text content */
+
+
+
+ 
+
+
+
+}
+
+
+
+
+
+
+
+.card img {
+
+
+
+ width: 100%; /* Ensure image fills the card width */
+
+
+
+ height: auto; /* Maintain aspect ratio */
+
+
+
+ border-bottom: 1px solid #ddd; /* Border at bottom of image */
+
+
+
+ border-top-left-radius: 10px; /* Match card border radius */
+
+
+
+ border-top-right-radius: 10px; /* Match card border radius */
+
+
+
+}
+
+
+
+
+
+
+
+.card-content {
+
+
+
+ padding: 10px; /* Added padding for content */
+
+
+
+ 
+
+
+
+}
+
+
+
+
+
+
+
+.card-content h3 {
+
+
+
+ font-size: 1.2em; /* Adjust font size */
+
+
+
+ margin: 10px 0; /* Adjust margin */
+
+
+
+}
+
+
+
+
+
+ 
+
+.card:hover {
+
+
+
+ transform: scale(1.1);
+
+
+
+}
+
+
+
+ 
+
+
+
+
+
+
+
+/* Define color change animation */
+
+
+
+@keyframes colorChange {
+
+
+
+ 0% { color: #800080; }
+
+
+
+ 50% { color: #00bfff; }
+
+
+
+ 100% { color: #800080; }
+
+
+
+}
+
+
+
+
+
+/* 
+
+/* Define shake animation */
+
+
+
+@keyframes shake {
+
+
+
+ 0% { transform: translateX(0); }
+
+
+
+ 25% { transform: translateX(-5px); }
+
+
+
+ 50% { transform: translateX(5px); }
+
+
+
+ 75% { transform: translateX(-5px); }
+
+
+
+ 100% { transform: translateX(0); }
+
+
+
+}
+
+ */
+
+
+
+/* 
+
+/* Define pulsate animation */
+
+
+
+
+
+
+
+
+
+.carousel-item::after {
+
+
+
+ content: "";
+
+
+
+ position: absolute;
+
+
+
+ top: 0;
+
+
+
+ left: 0;
+
+
+
+ width: 100%;
+
+
+
+ height: 100%;
+
+
+
+ background-color: rgba(0, 0, 0, 0.1) !important;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel-item img {
+
+
+
+ position: relative;
+
+
+
+ z-index: 1;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel-inner {
+
+
+
+ height: 530px;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel-inner .carousel-item {
+
+
+
+ height: 630px;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel-inner .carousel-item img {
+
+
+
+ max-height: 100%;
+
+
+
+ width: auto;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel-inner .carousel-item img {
+
+
+
+ border: 0;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .carousel-caption {
+
+
+
+ left: 0;
+
+
+
+ padding: 20px;
+
+
+
+ position: absolute;
+
+
+
+ bottom: 28%;
+
+
+
+ width: 100%;
+
+
+
+ display: inline-block;
+
+
+
+ text-align: center;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .carousel-caption h3 {
+
+
+
+ color: #ffffff;
+
+
+
+ font-size: 50px;
+
+
+
+ margin-bottom: 20px;
+
+
+
+ padding: 10px;
+
+
+
+ width: 54%;
+
+
+
+ line-height: 65px;
+
+
+
+ margin: 0 auto;
+
+
+
+ font-weight: 600;
+
+
+
+ letter-spacing: 2px;
+
+
+
+ text-transform: uppercase;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .carousel-caption p {
+
+
+
+ color: #ffffff;
+
+
+
+ font-size: 15px;
+
+
+
+ line-height: 28px;
+
+
+
+ margin: 0 auto 20px;
+
+
+
+ width: 65%;
+
+
+
+ padding: 12px;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .carousel-caption a.more {
+
+
+
+ color: #990000;
+
+
+
+ font-size: 25px;
+
+
+
+ text-decoration: none;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .carousel-caption a.more:hover {
+
+
+
+ text-decoration: underline;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .carousel-control-prev,
+
+
+
+.carousel .carousel-control-next {
+
+
+
+ /* Add styles for carousel controls if needed */
+
+
+
+}
+
+
+
+
+
+
+
+ /* Define CSS animations */
+
+
+
+
+
+
+
+ @keyframes slideFromLeft {
+
+
+
+
+
+
+
+ 0% {
+
+
+
+
+
+
+
+ opacity: 0;
+
+
+
+
+
+
+
+ transform: translateX(-100%);
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+ 50% {
+
+
+
+ opacity: 1;
+
+ }
+
+
+
+ 100% {
+
+
+
+ transform: translateX(0);
+
+
+
+ }
+
+
+
+ }
+
+
+
+ .carousel-caption {
+
+
+
+ animation: slideFromLeft 0.1s ease forwards;
+
+ text-align: center;
+
+ position: absolute;
+
+ left: 0;
+
+ right: 0;
+
+ }
+
+ .carousel-caption h3,
+
+ .carousel-caption h4 {
+
+ color: khaki; /* Change text color here */
+
+
+
+ }
+
+
+
+.carousel-item img {
+
+
+
+ height: auto; /* Set your desired height here */
+
+
+
+ width: auto; /* Maintain aspect ratio */
+
+
+
+ margin: 0 auto; /* Center the image horizontally */
+
+
+
+ }
+
+
+
+ 
+
+
+
+ #kk
+
+
+
+ {
+
+
+
+ height:auto;
+
+
+
+ 
+
+
+
+ }
+
+
+
+/* flip cards */
+
+
+
+.custom-container {
+
+
+
+ display: flex;
+
+
+
+ justify-content: space-around;
+
+
+
+ flex-wrap: wrap;
+
+
+
+ max-width: 1200px;
+
+
+
+ margin: 0 auto;
+
+
+
+}
+
+
+
+
+
+
+
+.custom-flip-card {
+
+
+
+ background-color: transparent;
+
+
+
+ width: 300px;
+
+
+
+ height: 300px;
+
+
+
+ perspective: 1000px;
+
+
+
+ margin: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.custom-flip-card-inner {
+
+
+
+ position: relative;
+
+
+
+ width: 100%;
+
+
+
+ height: 100%;
+
+
+
+ text-align: center;
+
+
+
+ transition: transform 0.6s;
+
+
+
+ transform-style: preserve-3d;
+
+
+
+}
+
+
+
+
+
+
+
+.custom-flip-card:hover .custom-flip-card-inner {
+
+
+
+ transform: rotateY(180deg);
+
+
+
+}
+
+
+
+
+
+
+
+.custom-flip-card-front, .custom-flip-card-back {
+
+
+
+ position: absolute;
+
+
+
+ width: 100%;
+
+
+
+ height: 100%;
+
+
+
+ backface-visibility: hidden;
+
+
+
+ border-radius: 10px;
+
+
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+
+}
+
+
+
+
+
+
+
+.custom-flip-card-front img {
+
+
+
+ width: 100%;
+
+
+
+ height: 100%;
+
+
+
+ object-fit: cover;
+
+
+
+ border-radius: 10px;
+
+
+
+}
+
+
+
+
+
+
+
+.custom-flip-card-back {
+
+
+
+ background-color: rgba(0, 0, 0, 0.7);
+
+
+
+ color: #fff;
+
+
+
+ transform: rotateY(180deg);
+
+
+
+ padding: 10px;
+
+
+
+ display: flex;
+
+
+
+ flex-direction: column;
+
+
+
+ justify-content: center;
+
+
+
+ align-items: center;
+
+
+
+}
+
+
+
+
+
+
+
+.custom-flip-card-back .card-title,
+
+
+
+.custom-flip-card-back .card-text {
+
+
+
+ margin: 10px 0;
+
+
+
+}
+
+
+
+
+
+
+
+/* Ensure the container takes full width */
+
+
+
+.container2 {
+
+
+
+ width: 100%;
+
+
+
+ padding: 0;
+
+
+
+ margin-left: 40px;
+
+
+
+}
+
+
+
+
+
+
+
+/* Adjust card size */
+
+
+
+.custom-card {
+
+
+
+ width: 100%;
+
+
+
+ height: 84%;
+
+
+
+ overflow: hidden;
+
+
+
+ display: flex;
+
+
+
+ flex-direction: column;
+
+
+
+ justify-content: center;
+
+
+
+ align-items: center;
+
+
+
+ background-color: white;
+
+
+
+ border-radius: 10px;
+
+
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+
+ 
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-card img {
+
+
+
+ width: 100%;
+
+
+
+ height: 200px; /* Set a fixed height for the images */
+
+
+
+ 
+
+
+
+ object-fit: cover; /* Ensures the image covers the card area without distortion */
+
+
+
+ gap : 0;
+
+
+
+}
+
+
+
+
+
+
+
+.custom-card:hover {
+
+
+
+ transform: scale(1.05);
+
+
+
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+
+
+}
+
+
+
+
+
+
+
+.custom-card .card-content {
+
+
+
+ padding: 10px; /* Adjust padding if needed */
+
+
+
+ flex-grow: 1; /* Ensures the card content takes up the remaining space */
+
+
+
+}
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+
+
+ /* On medium screens and up, ensure four cards per row */
+
+
+
+ .col-md-3 {
+
+
+
+ max-width: 100%; /* 100% / 4 = 25% */
+
+
+
+ flex: 0 0 25%; /* Ensure the columns take 25% of the row */
+
+
+
+ }
+
+
+
+}
+
+
+
+
+
+
+
+ .card a {
+
+
+
+ display: block;
+
+
+
+ width: 100%;
+
+
+
+ height: 100%;
+
+
+
+ text-decoration: none; /* Remove default underline */
+
+
+
+} 
+
+
+
+
+
+
+
+#card22 img {
+
+
+
+ width: 100%; /* Ensure image fills the card width */
+
+
+
+ height: 100%; /* Maintain aspect ratio */
+
+
+
+ }
+
+
+
+
+
+
+
+#card11 img {
+
+
+
+ width: 100%; /* Ensure image fills the card width */
+
+
+
+ height: 100%; /* Maintain aspect ratio */
+
+
+
+ }
+
+
+
+ 
+
+
+
+ #card32 img {
+
+
+
+ width: 100%; /* Ensure image fills the card width */
+
+
+
+ height: 100%; /* Maintain aspect ratio */
+
+
+
+ }
+
+
+
+
+
+
+
+#card42 img {
+
+
+
+ width: 100%; /* Ensure image fills the card width */
+
+
+
+ height: 100%; /* Maintain aspect ratio */
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles specific to the carousel cards */
+
+
+
+.carousel .big-container {
+
+
+
+ position: relative;
+
+
+
+ padding: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .card {
+
+
+
+ position: relative;
+
+
+
+ margin: 15px;
+
+
+
+ overflow: hidden;
+
+
+
+ background: #fff; /* Ensure a white background for visibility */
+
+
+
+ border-radius: 8px; /* Optional: add some border-radius for aesthetics */
+
+
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .card a {
+
+
+
+ display: block; /* Ensure the anchor fills the card */
+
+
+
+ text-decoration: none; /* Remove underline from links */
+
+
+
+ color: inherit; /* Inherit text color */
+
+
+
+ cursor: pointer; /* Change cursor to pointer on hover */
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .card-content {
+
+
+
+ position: absolute;
+
+
+
+ bottom: 0;
+
+
+
+ left: 0;
+
+
+
+ width: 100%;
+
+
+
+ background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text visibility */
+
+
+
+ color: #fff; /* Ensure text is white for contrast */
+
+
+
+ padding: 10px;
+
+
+
+ box-sizing: border-box;
+
+
+
+ transition: background 0.3s ease; /* Smooth background transition */
+
+
+
+ z-index: 10; /* Ensure it's above other elements */
+
+
+
+ visibility: visible; /* Ensure it's visible */
+
+
+
+ display: block; /* Ensure it's displayed */
+
+
+
+}
+
+
+
+
+
+
+
+.carousel .card-content h3,
+
+
+
+.carousel .card-content p {
+
+
+
+ margin: 0; /* Remove default margins */
+
+
+
+}
+
+
+
+
+
+
+
+ .carousel .card:hover .card-content {
+
+
+
+ background: rgba(0, 0, 0, 0.7); /* Darken background on hover */
+
+
+
+}
+
+
+
+
+
+
+
+ .carousel .card:hover {
+
+
+
+ cursor: pointer; /* Ensure the cursor shows as a hand */
+
+
+
+} 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </style>
+
+
+
+
+
+
+
+ <script>
+
+
+
+ $(document).ready(function(){
+
+
+
+	// Hide all dropdown menus initially
+
+
+
+	$('.dropdown-menu').hide();
+
+
+
+	
+
+
+
+	// When hovering over a nav-link dropdown-toggle, show its dropdown-menu and hide others
+
+
+
+	$('.nav-link.dropdown-toggle').hover(function(){
+
+
+
+	$('.dropdown-menu').hide();
+
+
+
+	$(this).next('.dropdown-menu').show();
+
+
+
+	});
+
+
+
+	
+
+
+
+	// When hovering over a dropdown-item dropdown-toggle, show its dropdown-menu and hide others
+
+
+
+	$('.dropdown-item.dropdown-toggle').hover(function(){
+
+
+
+	$(this).closest('.dropdown-menu').find('.dropdown-menu').hide();
+
+
+
+	$(this).next('.dropdown-menu').show();
+
+
+
+	});
+
+
+
+	
+
+
+
+	// Hide dropdown menus when mouse is not hovering over any dropdown
+
+
+
+	$('.dropdown').mouseleave(function() {
+
+
+
+	$('.dropdown-menu').hide();
+
+
+
+	});
+
+
+
+
+
+
+
+	// Assuming you want to create a slider for the "DEALS OF THE DAY" section
+
+
+
+	$('.deals-row').slick({
+
+
+
+	slidesToShow: 4,
+
+
+
+	slidesToScroll: 1,
+
+
+
+	autoplay: true,
+
+
+
+	autoplaySpeed: 2000,
+
+
+
+	});
+
+
+
+	});
+
+
+
+
+
+
+
+ </script>
+
+
+
+
+
+
+
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-image: url('images/mmkkss.webp'); background-size: cover; height: 100px; width: 100%;">
+
+
+
+
+
+
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+
+
+
+<ul class="navbar-nav">
+
+
+
+<li class="nav-item" th:each="navbarItem : ${navbarWithDropdownData}">
+
+
+
+<div class="dropdown">
+
+
+
+<a th:if="${#lists.isEmpty(navbarItem.value)}" class="nav-link text-dark" th:href="${navbarItem.key != null ? (navbarItem.key.itemName == 'Admin' ? '/Admin/' + navbarItem.key.itemName : navbarItem.key.itemName) : ''}" th:text="${navbarItem.key != null ? navbarItem.key.itemName : ''}"></a>
+
+
+
+<a th:if="${not #lists.isEmpty(navbarItem.value)}" class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${navbarItem.key != null ? navbarItem.key.itemName : ''}"></a>
+
+
+
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+
+<div th:each="dropdownItem : ${navbarItem.value}">
+
+
+
+<div class="dropdown-submenu">
+
+
+
+<a class="dropdown-item dropdown-toggle" href="#" th:href="${dropdownItem.itemName == 'Admin' ? '/Admin/' + dropdownItem.itemName : '/User/' + dropdownItem.itemName}" th:text="${dropdownItem.itemName}"></a>
+
+
+
+<div class="dropdown-menu">
+
+
+
+<div th:each="dropChild : ${dropdownItem.dropChildren}">
+
+
+
+<div class="dropdown-submenu">
+
+
+
+<a class="dropdown-item dropdown-toggle" href="#" th:href="${dropChild.itemName == 'Admin' ? '/Admin/' + dropChild.itemName : '/User/' + dropChild.itemName}" th:text="${dropChild.itemName}"></a>
+
+
+
+<div class="dropdown-menu">
+
+
+
+<div th:each="dropChildOfChild : ${dropChild.dropChildrenOfChild}">
+
+
+
+<div class="dropdown-submenu">
+
+
+
+<a class="dropdown-item dropdown-toggle" href="#" th:href="${dropChildOfChild.itemName == 'Admin' ? '/Admin/' + dropChildOfChild.itemName : '/User/' + dropChildOfChild.itemName}" th:text="${dropChildOfChild.itemName}"></a>
+
+
+
+<div class="dropdown-menu">
+
+
+
+<a class="dropdown-item" th:each="grandChild : ${dropChildOfChild.grandChildren}" th:href="${grandChild.itemName == 'Admin' ? '/Admin/' + grandChild.itemName : '/User/' + grandChild.itemName}" th:text="${grandChild.itemName}"></a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</li>
+
+
+
+</ul>
+
+
+
+
+
+
+
+<!-- Speech Recognition -->
+
+
+
+<script>
+
+
+
+function startDictation() {
+
+
+
+if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+
+
+var recognition = new webkitSpeechRecognition();
+
+
+
+recognition.continuous = false;
+
+
+
+recognition.interimResults = false;
+
+
+
+recognition.lang = 'en-US';
+
+
+
+recognition.start();
+
+
+
+recognition.onresult = function (e) {
+
+
+
+document.getElementById('transcript').value = e.results[0][0].transcript;
+
+
+
+recognition.stop();
+
+
+
+document.getElementById('labnol').submit();
+
+
+
+};
+
+
+
+recognition.onerror = function (e) {
+
+
+
+recognition.stop();
+
+
+
+};
+
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+<!-- beep sound code -->
+
+
+
+<script>
+
+
+
+function play() {
+
+
+
+var audio = new Audio('https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3');
+
+
+
+audio.play();
+
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<ul class="navbar-nav ml-4">
+
+
+
+<li class="nav-item">
+
+
+
+<a class="nav-link text-dark" id="locationButton"><i class="fas fa-map-marker-alt" style="color: #28a745;"></i> Location</a>
+
+
+
+</li>
+
+
+
+<div id="addressContainer"></div>
+
+
+
+<script>
+
+
+
+document.getElementById('locationButton').addEventListener('click', function() {
+
+
+
+navigator.geolocation.getCurrentPosition(function(position) {
+
+
+
+var latitude = position.coords.latitude;
+
+
+
+var longitude = position.coords.longitude;
+
+
+
+fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+
+
+
+.then(response => response.json())
+
+
+
+.then(data => {
+
+
+
+var address = data.display_name;
+
+
+
+document.getElementById('addressContainer').textContent = 'Your current address: ' + address;
+
+
+
+document.getElementById('addressContainer').style.display = 'block';
+
+
+
+})
+
+
+
+.catch(error => {
+
+
+
+console.error('Error fetching address:', error);
+
+
+
+});
+
+
+
+});
+
+
+
+});
+
+
+
+</script>
+
+
+
+<li class="nav-item" th:unless="${#authorization.expression('isAuthenticated()')}">
+
+
+
+<a class="nav-link text-dark" href="/login">
+
+
+
+<i class="fas fa-user-circle fa-lg" style="color: #007bff;"></i> Login
+
+
+
+</a>
+
+
+
+</li>
+
+
+
+<li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
+
+
+
+<a class="nav-link text-dark" href="/profile">
+
+
+
+<i class="fas fa-user-circle fa-lg" style="color: #007bff;"></i> <span th:text="${#authentication.principal.name}"></span>
+
+
+
+</a>
+
+
+
+</li>
+
+
+
+<li class="nav-item">
+
+
+
+<a class="nav-link text-dark" href="/cart"><i class="fas fa-shopping-cart fa-lg" style="color:red"></i> Cart</a>
+
+
+
+</li>
+
+
+
+<li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
+
+
+
+<a class="nav-link text-dark" th:href="@{/logout}">
+
+
+
+<i class="fas fa-sign-out-alt fa-lg" style="color: #007bff;"></i> Logout
+
+
+
+</a>
+
+
+
+</li>
+
+
+
+</ul>
+
+
+
+</div>
+
+
+
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="logo_products" style="background-image: url('images/mmkkss.webp'); background-size: cover; height: 120px; width: 100%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="row">
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ <span style="position: absolute; left: 0%; top: 70px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <img src="/images/logo3.png" alt="---" height="150" width="150" style="margin-left: 20px; margin-bottom: 40px; align-items: self-start;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-4 w3ls_logo_products_left1" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="phone_email">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li style="color: #4169E1; font-size: 15px;"><i class="fa fa-phone" aria-hidden="true"></i>Order online or call us : (+0123) 234 567</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-4 text-center w3ls_logo_products_center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h1 style="color:#800080;"><B>My Mart</B></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-4 text-right w3ls_logo_products_right">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <form class="form-inline my-2 my-lg-0" id="labnol" action="/search" method="get">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <input class="form-control mr-sm-1" type="search" id="transcript" name="query" placeholder="Search" aria-label="Search" style="width: 220px; margin-top:8px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <svg onclick="startDictation(),play()" xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16" style="color:#800080;" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/>
+
+
+
+
+
+</svg> 
+
+ <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> <br>
+
+
+
+</form>
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+
+
+
+ <div class="carousel-inner">
+
+
+
+ <div class="carousel-item active">
+
+
+
+ <img src="images/crr-modified.jpg" class="d-block w-100" alt="...">
+
+
+
+ <div class="carousel-caption kb_caption kb_caption_right">
+
+
+
+ <h3 data-animation="animated flipInX" class="" style="color:red">Flat <span>50%</span> Discount</h3>
+
+
+
+ <h4 data-animation="animated flipInX" class="">Hot Offer Today Only</h4>
+
+
+
+ <a href="/Deals" class="btn btn-danger" style="margin-top: 10px;">Shop Now</a>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ <div class="carousel-item">
+
+
+
+ <img src="images/crr1-modified.jpg" class="d-block w-100" alt="...">
+
+
+
+ <div class="carousel-caption kb_caption kb_caption_right">
+
+
+
+ <h3 data-animation="animated fadeInDown" class="" style="color:red">Our Latest Fashion Editorials</h3>
+
+
+
+ <h4 data-animation="animated fadeInUp" class="">Discover the latest trends and styles in our fashion editorials</h4>
+
+
+
+ <a href="/User/Fashion" class="btn btn-danger" style="margin-top: 10px;">Shop Now</a>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ <div class="carousel-item">
+
+
+
+ <img src="images/44.jpg" class="d-block w-100" alt="...">
+
+
+
+ <div class="carousel-caption kb_caption kb_caption_center">
+
+
+
+ <h3 data-animation="animated fadeInLeft" class="" style="color:red">End Of Season Sale</h3>
+
+
+
+ <h4 data-animation="animated flipInX" class="">Shop now and enjoy exclusive discounts on our end of season sale</h4>
+
+
+
+ <a href="/User/All%20Products" class="btn btn-danger" style="margin-top: 10px;">Shop Now</a>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+
+
+
+ <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+
+
+ <span class="sr-only">Previous</span>
+
+
+
+ </a>
+
+
+
+ <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+
+
+
+ <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+
+
+ <span class="sr-only">Next</span>
+
+
+
+ </a>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+ $(document).ready(function(){
+
+
+
+ $('#carouselExampleFade').on('slide.bs.carousel', function () {
+
+
+
+ $('.animated-caption').removeClass('animated-caption');
+
+
+
+ setTimeout(function(){
+
+
+
+ $('.carousel-item.active .kb_caption h3, .carousel-item.active .kb_caption h4').addClass('animated-caption');
+
+
+
+ }, 100);
+
+
+
+ });
+
+
+
+ });
+
+
+
+</script>
+
+
+
+
+
+
+
+ <div class="card-container1">
+
+
+
+ <div class="card1">
+
+
+
+ <a href="/User/Fashion">
+
+
+
+ <img src="images/fashion2.jpg" class="card-img-top" alt="Card Image 1">
+
+
+
+ </a>
+
+
+
+ <div class="card-body">
+
+
+
+ <h5 class="card-title">Fashion</h5>
+
+
+
+ <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ <div class="card1">
+
+
+
+ <a href="/User/Electronics">
+
+
+
+ <img src="images/electronics.jpg" class="card-img-top" alt="Card Image 2">
+
+
+
+ </a>
+
+
+
+ <div class="card-body">
+
+
+
+ <h5 class="card-title">Electronics</h5>
+
+
+
+ <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ <div class="card1">
+
+
+
+ <a href="/User/Facewash">
+
+
+
+ <img src="images/beauty.jpg" class="card-img-top" alt="Card Image 3">
+
+
+
+ </a>
+
+
+
+ <div class="card-body">
+
+
+
+ <h5 class="card-title">Beauty</h5>
+
+
+
+ <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+</div>
+
+
+
+ <br>
+
+
+
+<div class="container2">
+
+
+
+ <div class="row">
+
+
+
+ <!-- Loop through cards -->
+
+
+
+ <div th:each="card : ${card}" class="col-md-3 mb-3">
+
+
+
+ <div class="card custom-card">
+
+
+
+ <a th:href="@{'/User/' + ${card.category} }">
+
+
+
+ <img th:src="@{'/images/' + ${card.imageFileName}}" class="card-img-top" alt="...">
+
+
+
+ </a>
+
+
+
+ <div class="card-content">
+
+
+
+ <h5 class="card-title" th:text="${card.title}"></h5>
+
+
+
+ <p class="card-text" th:text="${card.description}"></p>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<br> 
+
+
+
+
+
+
+
+<div class="container3">
+
+
+
+ <div id="carouselExample" class="carousel slide" data-ride="carousel">
+
+
+
+ <div class="carousel-inner">
+
+
+
+ <div th:each="carousel, iterStat : ${carousel}" id="kk" class="carousel-item" th:classappend="${iterStat.index == 0} ? 'active' : ''">
+
+
+
+ <img th:src="@{'/images/' + ${carousel.imageFileName}}" class="d-block" alt="...">
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+
+
+
+ <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+
+
+ <span class="sr-only">Previous</span>
+
+
+
+ </a>
+
+
+
+ <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+
+
+
+ <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+
+
+ <span class="sr-only">Next</span>
+
+
+
+ </a>
+
+
+
+ </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<h1 class="section-title">New Releases</h1>
+
+
+
+<div class="custom-container">
+
+
+
+ <!-- Loop through cards -->
+
+
+
+ <div th:each="newarrival : ${newarrival}" class="col-md-4 mb-3">
+
+
+
+ <div class="custom-flip-card">
+
+
+
+ <div class="custom-flip-card-inner">
+
+
+
+ <div class="custom-flip-card-front">
+
+
+
+ <a href="#">
+
+
+
+ <img th:src="@{'/images/' + ${newarrival.imageFileName}}" alt="...">
+
+
+
+ </a>
+
+
+
+ </div>
+
+
+
+ <div class="custom-flip-card-back">
+
+
+
+ <h5 class="card-title" th:text="${newarrival.title}"></h5>
+
+
+
+ <p class="card-text" th:text="${newarrival.description}"></p>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+ </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="container-fluid">
+
+ <div class="row">
+
+ <!-- First Big Container -->
+
+ <div class="col-md-6 big-container" style="background-image: url('images/deals.jpg');">
+
+ <h3 class="container-heading"><b>Brands</b></h3>
+
+ <div id="brandCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
+
+ <div class="carousel-inner">
+
+ <!-- First Carousel Item -->
+
+ <div class="carousel-item active">
+
+ <div class="card" id="card11">
+
+ <a href="#">
+
+ <img src="images/brand1.webp" alt="Card Image 1">
+
+ </a>
+
+ 
+
+ <div class="card-content">
+
+ <h3>Tulsattva</h3>
+
+ <p>Sample text for Tulsattva brand.</p>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ <!-- Second Carousel Item -->
+
+ <div class="carousel-item">
+
+ <div class="card" id="card22">
+
+ <a href="#">
+
+ <img src="images/brand2.jpg" alt="Card Image 2">
+
+ </a>
+
+ <div class="card-content">
+
+ <h3>Wrangler</h3>
+
+ <p>Sample text for Wrangler brand.</p>
+
+ </div>
+
+ </div>
+
+ </div>
+
+
+
+ <!-- Add more carousel items here -->
+
+
+
+ </div>
+
+
+
+ <!-- Carousel controls -->
+
+ <a class="carousel-control-prev" href="#brandCarousel" role="button" data-slide="prev">
+
+ <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+ <span class="sr-only">Previous</span>
+
+ </a>
+
+ <a class="carousel-control-next" href="#brandCarousel" role="button" data-slide="next">
+
+ <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+ <span class="sr-only">Next</span>
+
+ </a>
+
+
+
+ </div>
+
+ </div>
+
+
+
+ <!-- Second Big Container -->
+
+ <div class="col-md-6 big-container" style="background-image: url('images/summerspls.jpg');">
+
+ <h3 class="container-heading"><b>Summer Specials</b></h3>
+
+ <div id="summerCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
+
+
+
+ <div class="carousel-inner">
+
+ <!-- First Carousel Item -->
+
+ <div class="carousel-item active">
+
+ <div class="card" id="card32">
+
+ <a href="#">
+
+ <img src="images/sm.jpg" alt="Card Image 1">
+
+ </a>
+
+ <div class="card-content">
+
+ <h3>Summer Cotton</h3>
+
+ <p>COOFANDY Linen Sets For Men 2 Piece Button Down Shirt Long Sleeve And Casual Beach Drawstring Waist Shorts Summer Outfits, A-white, X-Large</p>
+
+ </div>
+
+ </div>
+
+ </div>
+
+
+
+ <!-- Second Carousel Item -->
+
+
+
+ <div class="carousel-item">
+
+ <div class="card" id="card42">
+
+ <a href="#">
+
+ <img src="images/cooler1.jpg" alt="Card Image 2">
+
+ </a>
+
+ 
+
+ <div class="card-content">
+
+ <h6>Cooler</h6>
+
+ <p>BLUE STAR Astra 10 Litres Personal Air Cooler PA10PMA with Cross Drift Technology and Mosquito/Dust Filter, White</p>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ <!-- Add more carousel items here -->
+
+ </div>
+
+ <!-- Carousel controls -->
+
+ <a class="carousel-control-prev" href="#summerCarousel" role="button" data-slide="prev">
+
+ <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+ <span class="sr-only">Previous</span>
+
+ </a>
+
+
+
+ <a class="carousel-control-next" href="#summerCarousel" role="button" data-slide="next">
+
+ <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+ <span class="sr-only">Next</span>
+
+ </a>
+
+ </div>
+
+ </div>
+
+ </div>
+
+</div>
+
+
+
+<br><div class="deals"> 
+
+
+
+ <div class="container"> 
+
+ <h3 class="w3ls-title">DEALS OF THE DAY </h3> 
+
+ <div class="deals-row">
+
+ <div class="col-md-3 focus-grid"> 
+
+ <a href="Deals" class="wthree-btn"> 
+
+ <div class="focus-image"><i class="fa fa-mobile"></i></div>
+
+ <h4 class="clrchg">Mobiles</h4> 
+
+
+
+ </a>
+
+
+
+ </div>
+
+
+
+ <div class="col-md-3 focus-grid">
+
+ <a href="Deals" class="wthree-btn wthree1"> 
+
+ <div class="focus-image"><i class="fa fa-laptop"></i></div>
+
+ <h4 class="clrchg"> Electronics &amp; Appliances</h4> 
+
+ </a>
+
+ </div> 
+
+
+
+ <div class="col-md-3 focus-grid"> 
+
+ <a href="Deals" class="wthree-btn wthree2"> 
+
+ <div class="focus-image"><i class="fa fa-wheelchair"></i></div>
+
+ <h4 class="clrchg">Furnitures</h4>
+
+ </a>
+
+
+
+ </div> 
+
+ <div class="col-md-3 focus-grid"> 
+
+ <a href="Deals" class="wthree-btn wthree3"> 
+
+ <div class="focus-image"><i class="fa fa-home"></i></div>
+
+ <h4 class="clrchg">Home Decor</h4>
+
+ </a>
+
+
+
+ </div> 
+
+
+
+ <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+
+ <a href="Deals" class="wthree-btn wthree3"> 
+
+
+
+ <div class="focus-image"><i class="fa fa-book"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Books &amp; Music</h4> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="Deals" class="wthree-btn wthree4"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="focus-image"><i class="fa fa-asterisk"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Fashion</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="Deals" class="wthree-btn wthree2"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="focus-image"><i class="fa fa-gamepad"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Kids</h4>
+
+
+
+ </a>
+
+
+
+ </div> 
+
+
+
+ <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+
+
+
+ <a href="Deals" class="wthree-btn wthree"> 
+
+
+
+ <div class="focus-image"><i class="fa fa-shopping-basket"></i></div>
+
+
+
+ <h4 class="clrchg">Groceries</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="Deals" class="wthree-btn wthree5"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="focus-image"><i class="fa fa-medkit"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Health</h4> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-2 focus-grid w3focus-grid-mdl"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="Deals" class="wthree-btn wthree1"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="focus-image"><i class="fa fa-car"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Automotive</h4> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3 focus-grid"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="Deals" class="wthree-btn wthree2"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="focus-image"><i class="fa fa-cutlery"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Food</h4> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3 focus-grid"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="Deals" class="wthree-btn wthree5"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="focus-image"><i class="fa fa-futbol-o"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Sports</h4> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3 focus-grid"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="Deals" class="wthree-btn wthree3"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="focus-image"><i class="fa fa-gamepad"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Games &amp; Toys</h4> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3 focus-grid"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="Deals" class="wthree-btn "> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="focus-image"><i class="fa fa-gift"></i></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h4 class="clrchg">Gifts</h4> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="clearfix"> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- //deals --> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<div class="w3agile-ftr-top">
+
+
+
+
+
+
+
+ <div class="container">
+
+
+
+
+
+
+
+ <div class="ftr-toprow">
+
+
+
+
+
+
+
+ <div class="col-md-4 ftr-top-grids">
+
+
+
+
+
+
+
+ <div class="ftr-top-left">
+
+
+
+
+
+
+
+ <i class="fa fa-truck" aria-hidden="true"></i>
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+ <div class="ftr-top-right">
+
+
+
+
+
+
+
+ <h4>FREE DELIVERY</h4>
+
+
+
+
+
+
+
+ <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+ <div class="clearfix"></div>
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+ <div class="col-md-4 ftr-top-grids">
+
+
+
+
+
+
+
+ <div class="ftr-top-left">
+
+
+
+
+
+
+
+ <i class="fa fa-user" aria-hidden="true"></i>
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+ <div class="ftr-top-right">
+
+
+
+
+
+
+
+ <h4><a href="Contact" style="text-decoration: none; color: white;">CUSTOMER CARE</a></h4> <!-- Updated: Removed underline and set text color to white -->
+
+
+
+
+
+
+
+ <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+ <div class="clearfix"></div>
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+ <div class="col-md-4 ftr-top-grids">
+
+
+
+
+
+
+
+ <div class="ftr-top-left">
+
+
+
+
+
+
+
+ <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+ <div class="ftr-top-right">
+
+
+
+
+
+
+
+<h4><a href="/quality" style="text-decoration: none; color: white;">GOOD QUALITY</a></h4> <!-- Updated: Removed underline and set text color to white -->
+
+
+
+
+
+
+
+ <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+
+
+
+
+
+
+
+ </div> 
+
+
+
+ </div>
+
+
+
+
+
+
+
+ <div class="clearfix"></div>
+
+
+
+
+
+
+
+ </div> 
+
+
+
+
+
+
+
+ <div class="clearfix"></div>
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <footer class="footer mt-9 py-3" id="footer-link" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3" style="left: 15%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h5><span>About Us</span></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li style="text-decoration: none;" th:each="aboutus : ${aboutusList}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a th:href="@{'/aboutus/' + ${aboutus.id}}" th:text="${aboutus.aboutus}" style="color: white;"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3" style="left: 15%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h5><span>Consumer Policy</span></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li th:each="consumerpolicy : ${consumerpolicyList}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a th:href="@{'/consumerpolicy/' + ${consumerpolicy.id}}" th:text="${consumerpolicy.consumerpolicy}"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="https://www.google.com" target="_blank"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3" style="left: 15%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h5><span>Customer Support</span></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li th:each="customersupport : ${customersupportList}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a th:href="@{'/customersupport/' + ${customersupport.id}}" th:text="${customersupport.customersupport}"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </ul> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3 mt-5" style="top: 80%; left: 20%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h5><span></span></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="list-unstyled">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li th:each="downloadapps : ${downloadappsList}" style="margin-bottom: 12%; display: ruby;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="https://play.google.com/store/apps/details?id=sa.com.mymart&pcampaignid=web_share">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <img th:src="@{'/images/' + ${downloadapps.imageFileName}}" alt="..." width="30" height="30">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </ul> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3 mt-3" style="left: 15%">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h5><span>Mail Us</span></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="list-unstyled">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li th:each="mailus : ${mailusList}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a "@{'/mailus/' + ${mailus.id}}" th:text="${mailus.mailus}"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </ul> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <span style="position: absolute; left: 0%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <img src="/images/logo3.png" alt="---" height="200" width="200" style="margin-left: 20px; align-items: self-start;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-3 mt-3" style="left: 20%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h5><span style="color:white">Registered Office Address</span></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="list-unstyled">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li th:each="roaddress : ${roaddressList}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="https://www.google.com/maps/place/My+Mart/@16.5191345,80.3960663,11z/data=!4m10!1m2!2m1!1smy+mart!3m6!1s0x3a35e4d3b916fe71:0x8729248c6061bf9b!8m2!3d16.5191345!4d80.6844574!15sCgdteSBtYXJ0IgOIAQFaCSIHbXkgbWFydJIBDWdyb2Nlcnlfc3RvcmXgAQA!16s%2Fg%2F11f2r908x4?entry=ttu" target="_blank" style="font-size: 17px; color: white;" th:text="${roaddress.roaddress}"></a>
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </ul> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+ <div class="footer1" style= "text-align: center;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-12 mt-6 mt-auto text-center background-color:red;margin-left: 50%; margin-top: 50%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="col-md-12 text-center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h5><span>Keep in Touch</span></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="list-unstyled d-flex justify-content-center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li th:each="keepintouch : ${keepintouchList}" style="margin-bottom: 15px; display: inline-block;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a style="display: inline-block;" th:href="@{'/Keepintouch/' + ${keepintouch.id}}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <img th:src="@{'/images/' + ${keepintouch.imageFileName}}" alt="..." width="30" height="30">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </ul> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="conditions" class="mr-3">Conditions of Use & Sale</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="cancelreturn" class="mr-3">Cancel&Return</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <a href="intrest">Interest-Based Ads</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h6><span>© 2024, MyMart.com, Inc. or its affiliates</span></h6>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <button onclick="topFunction()" id="backToTopBtn" title="Go to top">&#8593;</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // Show the back-to-top button when the user scrolls down 20px from the top of the document
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ window.onscroll = function() {scrollFunction()};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function scrollFunction() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ document.getElementById("backToTopBtn").style.display = "block";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ } else {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ document.getElementById("backToTopBtn").style.display = "none";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // Scroll to the top of the document when the button is clicked
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function topFunction() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ document.body.scrollTop = 0; // For Safari
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- google languages script -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script type="text/javascript"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function googleTranslateElementInit() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
