@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrival</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body
+        {
+        	background-color:#82E0AA;
+        }
+container2 {
+
+
+
+ display: flex;
+
+
+
+ justify-content: space-around;
+
+
+
+ flex-wrap: wrap;
+
+
+
+ max-width: 1200px;
+
+
+
+ margin: 0 auto;
+
+
+
+ }
+
+
+
+
+
+
+
+ .card {
+
+
+
+ position: relative;
+
+
+
+ width: 300px;
+
+
+
+ height: 300px;
+
+
+
+ overflow: hidden;
+
+
+
+ margin: 20px;
+
+
+
+ border-radius: 10px;
+
+
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+
+ transition: transform 0.3s ease;
+
+
+
+ }
+
+
+
+
+
+
+
+ .card:hover {
+
+
+
+ transform: scale(1.05);
+
+
+
+ }
+
+
+
+
+
+
+
+ .card img {
+
+
+
+ width: 100%;
+
+
+
+ height: 100%;
+
+
+
+ object-fit: constain;
+
+
+
+ }
+
+
+
+
+
+
+
+ .card-content {
+
+
+
+ position: absolute;
+
+
+
+ bottom: 0;
+
+
+
+ left: 0;
+
+
+
+ right: 0;
+
+
+
+ background-color: rgba(0, 0, 0, 0.7);
+
+
+
+ color: #fff;
+
+
+
+ padding: 10px;
+
+
+
+ transition: opacity 0.3s ease;
+
+
+
+ opacity: 0;
+
+
+
+ }
+
+
+
+
+
+
+
+ .card:hover .card-content {
+
+
+
+ opacity: 1;
+
+
+
+ }
+
+
+
+
+
+
+
+ .card-content a {
+
+
+
+ color: #fff;
+
+
+
+ text-decoration: none;
+
+
+
+ }
+
+
+
+ 
+
+
+
+ 
+</style>
+
+
+</head>
+<body>
+<div class="container2 mt-5">
+    <h1>New Arrival</h1>
+    <!-- Card Creation button -->
+    <a href="/Admin/createnewarrival" class="btn btn-primary mb-3">Create New Arrival</a>
+    
+    <div class="row">
+        <!-- Loop through cards -->
+        
+  <div th:each="newarrival : ${newarrival}" class="col-md-4 mb-3">      
+
+
+
+ <div class="card">
+
+ <a href="#">
+
+ 
+<img th:src="@{'/images/' + ${newarrival.imageFileName}}"  alt="...">
+                
+ </a>
+
+ <div class="card-content">
+
+ <h5 class="card-title" th:text="${newarrival.title}"></h5>
+  <p class="card-text" th:text="${newarrival.description}"></p>
+  <a th:href="@{/Admin/editnewarrival(id=${newarrival.id})}" class="btn btn-primary">Edit</a>
+  <a th:href="@{/Admin/deletenewarrival(id=${newarrival.id})}" class="btn btn-danger">Delete</a>
+                
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+<!-- <div th:each="card : ${card}" class="col-md-4 mb-3">
+            <div class="card">
+                <img th:src="@{'/images/' + ${card.imageFileName}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${card.title}"></h5>
+                    <p class="card-text" th:text="${card.description}"></p>
+                    <a th:href="@{/Admin/editcard(id=${card.id})}" class="btn btn-primary">Edit</a>
+                    <a th:href="@{/Admin/deletecard(id=${card.id})}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

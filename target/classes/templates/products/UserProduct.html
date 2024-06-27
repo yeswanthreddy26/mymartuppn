@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+
+
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:java8="http://www.thymeleaf.org/extras/java8">
+
+
+
+<head>
+
+
+
+	<meta charset="UTF-8">
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+
+	<style>
+
+
+
+	.product-card {
+
+
+
+	margin-bottom: 20px;
+
+
+
+	width: calc(33.33% - 20px);
+
+
+
+	display: inline-block;
+
+
+
+	vertical-align: top;
+
+
+
+	}
+
+
+
+
+
+
+
+	@media (max-width: 768px) {
+
+
+
+	.product-card {
+
+
+
+	width: calc(50% - 20px);
+
+
+
+	}
+
+
+
+	}
+
+
+
+
+
+
+
+	@media (max-width: 576px) {
+
+
+
+	.product-card {
+
+
+
+	width: calc(100% - 20px);
+
+
+
+	}
+
+
+
+	}
+
+
+
+
+
+
+
+	.product-card .card {
+
+
+
+	height: 100%;
+
+
+
+	}
+
+
+
+
+
+
+
+	.card {
+
+
+
+	transition: transform 0.2s;
+
+
+
+	}
+
+
+
+
+
+
+
+	.card:hover {
+
+
+
+	transform: translateY(-5px);
+
+
+
+	}
+
+
+
+
+
+
+
+	.card-img-top {
+
+
+
+	height: 200px;
+
+
+
+	object-fit: cover;
+
+
+
+	}
+
+
+
+
+
+
+
+	.deal-card {
+
+
+
+	margin-bottom: 30px;
+
+
+
+	border: 1px solid #ddd;
+
+
+
+	border-radius: 5px;
+
+
+
+	overflow: hidden;
+
+
+
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+
+	transition: transform 0.3s ease;
+
+
+
+	position: relative;
+
+
+
+	}
+
+
+
+
+
+
+
+	.deal-card:hover {
+
+
+
+	transform: translateY(-5px);
+
+
+
+	}
+
+
+
+
+
+
+
+	.card-body {
+
+
+
+	padding: 20px;
+
+
+
+	}
+
+
+
+
+
+
+
+	.card-title {
+
+
+
+	font-size: 1.25rem;
+
+
+
+	font-weight: bold;
+
+
+
+	margin-bottom: 10px;
+
+
+
+	}
+
+
+
+
+
+
+
+	.card-text {
+
+
+
+	margin-bottom: 10px;
+
+
+
+	}
+
+
+
+
+
+
+
+	.btn {
+
+
+
+	width: 100%;
+
+
+
+	}
+
+
+
+
+
+
+
+	.heart-icon {
+
+
+
+	font-size: 18px;
+
+
+
+	color: #888;
+
+
+
+	cursor: pointer;
+
+
+
+	}
+
+
+
+
+
+
+
+	.heart-icon.clicked {
+
+
+
+	color: red;
+
+
+
+	}
+
+
+
+
+
+
+
+	.deal-card .btn-primary {
+
+
+
+	background-color: #FFD700;
+
+
+
+	border-color: #FFD700;
+
+
+
+	color: #333;
+
+
+
+	}
+
+
+
+
+
+
+
+	.deal-card .btn-primary:hover {
+
+
+
+	background-color: #DAA520;
+
+
+
+	border-color: #DAA520;
+
+
+
+	transform: translateY(-3px);
+
+
+
+	}
+
+
+
+
+
+
+
+	.deal-card .btn-success {
+
+
+
+	background-color: #4CAF50;
+
+
+
+	border-color: #4CAF50;
+
+
+
+	color: white;
+
+
+
+	}
+
+
+
+
+
+
+
+	.deal-card .btn-success:hover {
+
+
+
+	background-color: #45A049;
+
+
+
+	border-color: #45A049;
+
+
+
+	transform: translateY(-3px);
+
+
+
+	}
+
+
+
+
+
+
+
+	.custom-button {
+
+
+
+	border-radius: 0;
+
+
+
+	font-weight: bold;
+
+
+
+	}
+
+
+
+
+
+
+
+	.filter-button {
+
+
+
+	margin-left: auto;
+
+
+
+	width: 13%;
+
+
+
+	position: absolute;
+
+
+
+	top: 0.5%;
+
+
+
+	left: 80%;
+
+
+
+	}
+
+
+
+
+
+
+
+	.hide {
+
+
+
+	display: none !important;
+
+
+
+	}
+
+
+
+
+
+
+
+	.goog-te-banner-frame {
+
+
+
+	display: none !important
+
+
+
+	}
+
+
+
+
+
+
+
+	.skiptranslate {
+
+
+
+	display: none !important
+
+
+
+	}
+
+
+
+
+
+body {
+
+	top: 0px !important;
+
+	}
+
+	.vertical-navbar {
+
+ position: fixed;
+
+ left: 0;
+
+ top: 0;
+
+ height: 100%;
+
+ width: 200px;
+
+ background: linear-gradient(45deg, 
+
+ rgba(255, 105, 180, 0.8) 0%, 
+
+ rgba(255, 20, 147, 0.8) 20%, 
+
+ rgba(255, 127, 80, 0.8) 40%, 
+
+ rgba(255, 69, 0, 0.8) 60%, 
+
+ rgba(255, 20, 147, 0.8) 80%, 
+
+ rgba(255, 105, 180, 0.8) 100%);
+
+ background-size: 300% 300%;
+
+ animation: gradientAnimation 5s ease infinite;
+
+ padding-top: 20px;
+
+ box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+ z-index: 1000;
+
+ overflow-y: auto;
+
+ color: black; /* Ensure text remains readable */
+
+}
+
+
+
+@keyframes gradientAnimation {
+
+ 0% {
+
+ background-position: 0% 50%;
+
+ }
+
+ 50% {
+
+ background-position: 100% 50%;
+
+ }
+
+ 100% {
+
+ background-position: 0% 50%;
+
+ }
+
+}
+
+
+
+.vertical-navbar .nav-item {
+
+ padding: 10px 15px;
+
+}
+
+	
+
+	body {
+
+ background: linear-gradient(45deg, #ff69b4, #ff1493, #ff1493, #ff7f50, #ff69b4);
+
+ background-size: cover;
+
+ background-repeat: no-repeat;
+
+ background-attachment: fixed;
+
+ background-position: center;
+
+ position: relative;
+
+ animation: gradientAnimation 6s ease infinite;
+
+ }
+
+
+
+ @keyframes gradientAnimation {
+
+ 0% {
+
+ background-position: 0% 50%;
+
+ }
+
+ 50% {
+
+ background-position: 100% 50%;
+
+ }
+
+ 100% {
+
+ background-position: 0% 50%;
+
+ }
+
+ }
+
+ 
+
+ .deal-card {
+
+ background-color: rgba(255, 255, 128, .5);
+
+ background-size: 300% 300%;
+
+ animation: gradientAnimation 15s ease infinite;
+
+ border: 1px solid #ddd;
+
+ border-radius: 5px;
+
+ overflow: hidden;
+
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+ transition: transform 0.3s ease;
+
+ position: relative;
+
+ color: white; /* Ensure text remains readable */
+
+}
+
+
+
+/* Reuse the same keyframes as the body background */
+
+@keyframes gradientAnimation {
+
+ 0% {
+
+ background-position: 0% 50%;
+
+ }
+
+ 50% {
+
+ background-position: 100% 50%;
+
+ }
+
+ 100% {
+
+ background-position: 0% 50%;
+
+ }
+
+}
+
+
+
+.deal-card:hover {
+
+ transform: translateY(-5px);
+
+}
+
+
+
+.card-title,
+
+.card-text,
+
+.brand-name,
+
+.category-field,
+
+.price-info,
+
+.btn {
+
+ color: white;
+
+}
+
+
+
+.discount-badge {
+
+ background-color: rgba(220, 20, 60, 0.8);
+
+ color: white;
+
+}
+
+
+
+.card-img-top {
+
+ height: 200px;
+
+ object-fit: cover;
+
+}
+
+
+
+.btn-primary {
+
+ background-color: rgba(255, 105, 180, 0.8);
+
+ border-color: rgba(255, 105, 180, 0.8);
+
+}
+
+
+
+.btn-primary:hover {
+
+ background-color: rgba(255, 20, 147, 0.8);
+
+ border-color: rgba(255, 20, 147, 0.8);
+
+ transform: translateY(-3px);
+
+}
+
+
+
+.btn-success {
+
+ background-color: rgba(255, 127, 80, 0.8);
+
+ border-color: rgba(255, 127, 80, 0.8);
+
+}
+
+
+
+.btn-success:hover {
+
+ background-color: rgba(255, 99, 71, 0.8);
+
+ border-color: rgba(255, 99, 71, 0.8);
+
+ transform: translateY(-3px);
+
+}
+
+ 
+
+ #brandCheckboxes,
+
+#categoryCheckboxes {
+
+ display: flex;
+
+ flex-wrap: wrap;
+
+}
+
+
+
+#brandCheckboxes div,
+
+#categoryCheckboxes div {
+
+ flex: 1 1 50%; /* Each checkbox container takes up 50% of the width */
+
+ display: flex;
+
+ align-items: center;
+
+ transition: transform 0.3s ease; /* Add transition effect for smooth transformation */
+
+}
+
+
+
+/* Add animation for checkbox */
+
+#brandCheckboxes input[type="checkbox"]:hover,
+
+#categoryCheckboxes input[type="checkbox"]:hover {
+
+ transform: rotate(180deg); /* Rotate the checkbox slightly on hover */
+
+ transition: transform 0.3s ease; /* Add transition effect for smooth rotation */
+
+}
+
+
+
+/* Add hover effect */
+
+#brandCheckboxes div:hover,
+
+#categoryCheckboxes div:hover {
+
+ transform: translateY(-3px); /* Move the container slightly upwards on hover */
+
+}
+
+ 
+
+ /* Custom styles for carousel */
+
+ .carousel-item img {
+
+ width: 100%;
+
+ height: 400px; /* Adjust height as needed */
+
+ object-fit: cover;
+
+ }
+
+
+
+ .carousel-control-prev, .carousel-control-next {
+
+ width: 5%;
+
+ background: none;
+
+ color: black;
+
+ }
+
+
+
+ .carousel-control-prev-icon, .carousel-control-next-icon {
+
+ font-size: 2rem;
+
+ }
+
+
+
+ .carousel-indicators {
+
+ bottom: 10px;
+
+ } 
+
+ 
+
+	</style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+
+
+	<script>
+
+
+
+	function toggleHeart(element) {
+
+
+
+	element.classList.toggle('clicked');
+
+
+
+	}
+
+
+
+	</script>
+
+
+
+
+
+
+
+	<div class="vertical-navbar">
+
+
+
+	<h5 class="text-center">Brands</h5>
+
+
+
+	<div id="brandCheckboxes">
+
+
+
+	<!-- Add brand checkboxes dynamically here -->
+
+
+
+	</div>
+
+
+
+	
+
+
+
+	<h5 class="text-center">Categories</h5>
+
+
+
+	<div id="categoryCheckboxes">
+
+
+
+	<!-- Add category checkboxes dynamically here -->
+
+
+
+	</div>
+
+
+
+	
+
+
+
+	
+
+
+
+	<h5 class="text-center">Price</h5>
+
+
+
+ <div>
+
+
+
+ <input type="range" id="priceRange" min="10" max="150000" value="1000" step="500" onchange="updatePriceRange()">
+
+
+
+ <label for="priceRange">Price Range: $<span id="minPriceValue">10</span> - $<span id="maxPriceValue">150000+</span></label>
+
+
+
+ <button id="goButton" onclick="filterByPrice()">Go</button>
+
+
+
+ <p>Selected Value: $<span id="selectedPriceValue">10,000</span></p>
+
+
+
+</div>
+
+
+
+ 
+
+
+
+	
+
+
+
+	
+
+
+
+	</div>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+ <ol class="carousel-indicators">
+
+ <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+
+ <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+
+ <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+ </ol>
+
+ <div class="carousel-inner">
+
+ <div class="carousel-item active">
+
+ <img src="public/images/iqoo.jpg" class="d-block w-100" alt="First slide">
+
+ </div>
+
+ <div class="carousel-item">
+
+ <img src="images/redmi12.jpg" class="d-block w-100" alt="Second slide">
+
+ </div>
+
+ <div class="carousel-item">
+
+ <img src="images/nord.jpg" class="d-block w-100" alt="Third slide">
+
+ </div>
+
+ </div>
+
+ <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+
+ <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+ <span class="sr-only">Previous</span>
+
+ </a>
+
+ <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+
+ <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+ <span class="sr-only">Next</span>
+
+ </a>
+
+</div>
+
+
+
+
+
+
+
+
+
+	<div class="col-md-6 text-right filter-button">
+
+
+
+	<div class="dropdown d-inline">
+
+
+
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</button>
+
+
+
+	<div class="dropdown-menu" aria-labelledby="filterDropdown">
+
+
+
+	<a class="dropdown-item" href="#" id="nameFilter">Name</a>
+
+
+
+	<a class="dropdown-item" href="#" id="brandFilter">Brand</a>
+
+
+
+	<a class="dropdown-item" href="#" id="categoryFilter">Category</a>
+
+
+
+	<a class="dropdown-item" href="#" id="priceFilter">Price</a>
+
+
+
+	<div class="dropdown-divider"></div>
+
+
+
+	<a class="dropdown-item" href="#" id="resetFilter">Reset Filter</a>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+	<br>
+
+
+
+
+
+
+
+	<div class="container" style="margin-left: 220px;">
+
+
+
+	<div class="container mt-5">
+
+
+
+	<div class="row">
+
+
+
+	<div class="col-md-4" th:each="product : ${products}">
+
+
+
+	<div class="card deal-card position-relative" style="padding: 0px 13px 10px 13px;">
+
+
+
+	<div class="container">
+
+
+
+	<form th:action="@{/wishlist/add}" method="post" class="wishlistForm">
+
+
+
+	<input type="hidden" name="productId" th:value="${product.id}">
+
+
+
+	<button type="submit" class="wishlistButton btn btn-link">
+
+
+
+	<span class="heartIcon-container">
+
+
+
+	<i class="heartIcon fas fa-heart heart-icon" style="position: absolute;left: 2px;top:0px"></i>
+
+
+
+	</span>
+
+
+
+	</button>
+
+
+
+	</form>
+
+
+
+	</div>
+
+
+
+	<a th:href="@{/User/viewproduct(id=${product.id})}"> <img th:src="@{'/images/' + ${product.imageFileName}}" class="card-img-top mb-3" alt="Product Image" style="z-index: 1; margin-top: -6px;"></a>
+
+
+
+	<div class="discount-badge position-absolute top-0 end-0 bg-danger text-white px-2 py-1" th:if="${product.deal != null}" th:text="' ' + ${product.deal.discount + '% OFF'}" style="z-index: 2; right: 7px; top: 5px;">10% OFF</div>
+
+
+
+	<h5 class="card-title mb-1" th:text="${product.name}"></h5>
+
+
+
+	<p class="brand-name text-uppercase text-muted mb-2" th:text="${product.brand}" style="font-size: 14px;"></p>
+
+
+
+	<p class="category-field text-muted mb-2" th:text="${product.category?.name}" style="font-size: 14px;"></p>
+
+
+
+	<p class="card-text mb-3" th:text="${product.description}"></p>
+
+
+
+	<div class="price-info" style="margin-bottom: -10px;">
+
+
+
+	<p th:if="${product.deal != null}" style="display: inline-block;">
+
+
+
+	<span class="discounted-price font-weight-bold" th:text="'$' + ${product.price - (product.price * product.deal.discount / 100)}"></span>
+
+
+
+	<span class="original-price" th:text="'$' + ${product.price}" style="text-decoration: line-through; color: #888; margin-left: 5px;"></span>
+
+
+
+	</p>
+
+
+
+	<p class="price font-weight-bold" th:unless="${product.deal != null}" th:text="'Price: $' + ${product.price}" style="display: inline-block;"></p>
+
+
+
+	</div>
+
+
+
+	<div class="card-body d-flex justify-content-between align-items-center" style="padding-top: 2px; padding-bottom: 1px;">
+
+
+
+	<div class="row">
+
+
+
+	<div class="col-auto" style="height: 52px; width: 150px;">
+
+
+
+	<form action="/cart/add" method="post">
+
+
+
+	<input type="hidden" name="productId" th:value="${product.id}" />
+
+
+
+	<input type="hidden" name="quantity" value="1" style="display: none;" />
+
+
+
+	<button type="submit" class="btn btn-primary btn-block custom-button" style="position: absolute; left: 3px;">Add to Cart</button>
+
+
+
+	</form>
+
+
+
+	</div>
+
+
+
+	<div class="col-auto ml-auto" style="position: absolute; right: 3px; height: 52px; width: 175px;">
+
+
+
+	<form id="buyNowForm" action="/cart/add" method="post">
+
+
+
+	<input type="hidden" name="productId" th:value="${product.id}" />
+
+
+
+	<input type="hidden" name="quantity" value="1" style="display: none;" />
+
+
+
+	<button type="submit" class="btn btn-success btn-block custom-button">Buy Now</button>
+
+
+
+	</form>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<script>
+
+
+
+ function applyFilters(filterType) {
+
+
+
+ const productItems = document.querySelectorAll(".deal-card");
+
+
+
+ const filterValue = prompt("Enter " + filterType + " to filter by:");
+
+
+
+ let filterField;
+
+
+
+
+
+
+
+ switch (filterType.toLowerCase()) {
+
+
+
+ case "name":
+
+
+
+ filterField = ".card-title";
+
+
+
+ break;
+
+
+
+ case "brand":
+
+
+
+ filterField = ".brand-name";
+
+
+
+ break;
+
+
+
+ case "category":
+
+
+
+ filterField = ".category-field";
+
+
+
+ break;
+
+
+
+ case "price":
+
+
+
+ filterField = ".price-info";
+
+
+
+ break;
+
+
+
+ default:
+
+
+
+ return;
+
+
+
+ }
+
+
+
+
+
+
+
+ for (let i = 0; i < productItems.length; i++) {
+
+
+
+ const productItem = productItems[i];
+
+
+
+ const fieldValue = productItem.querySelector(filterField).textContent.toLowerCase();
+
+
+
+
+
+
+
+ if (fieldValue.includes(filterValue.toLowerCase())) {
+
+
+
+ productItem.classList.remove("hide");
+
+
+
+ } else {
+
+
+
+ productItem.classList.add("hide");
+
+
+
+ }
+
+
+
+ }
+
+
+
+ }
+
+
+
+
+
+
+
+ const nameFilter = document.getElementById("nameFilter");
+
+
+
+ const brandFilter = document.getElementById("brandFilter");
+
+
+
+ const categoryFilter = document.getElementById("categoryFilter");
+
+
+
+ const priceFilter = document.getElementById("priceFilter");
+
+
+
+ const resetFilter = document.getElementById("resetFilter");
+
+
+
+
+
+
+
+ nameFilter.addEventListener("click", function () {
+
+
+
+ applyFilters("Name");
+
+
+
+ });
+
+
+
+
+
+
+
+ brandFilter.addEventListener("click", function () {
+
+
+
+ applyFilters("Brand");
+
+
+
+ });
+
+
+
+
+
+
+
+ categoryFilter.addEventListener("click", function () {
+
+
+
+ applyFilters("Category");
+
+
+
+ });
+
+
+
+
+
+
+
+ priceFilter.addEventListener("click", function () {
+
+
+
+ applyFilters("Price");
+
+
+
+ });
+
+
+
+
+
+
+
+ resetFilter.addEventListener("click", function () {
+
+
+
+ const productItems = document.querySelectorAll(".deal-card");
+
+
+
+
+
+
+
+ for (let i = 0; i < productItems.length; i++) {
+
+
+
+ const productItem = productItems[i];
+
+
+
+ productItem.classList.remove("hide");
+
+
+
+ }
+
+
+
+ });
+
+
+
+
+
+
+
+ // Brand filter checkboxes functionality
+
+
+
+ function createBrandCheckboxes() {
+
+
+
+ const brands = [...new Set(Array.from(document.querySelectorAll('.brand-name')).map(el => el.textContent.trim()))];
+
+
+
+ const brandCheckboxesContainer = document.getElementById('brandCheckboxes');
+
+
+
+ brands.forEach(brand => {
+
+
+
+ const checkbox = document.createElement('input');
+
+
+
+ checkbox.type = 'checkbox';
+
+
+
+ checkbox.id = `brand_${brand}`;
+
+
+
+ checkbox.value = brand;
+
+
+
+ checkbox.classList.add('brand-checkbox');
+
+
+
+ const label = document.createElement('label');
+
+
+
+ label.htmlFor = `brand_${brand}`;
+
+
+
+ label.textContent = brand;
+
+
+
+ const div = document.createElement('div');
+
+
+
+ div.appendChild(checkbox);
+
+
+
+ div.appendChild(label);
+
+
+
+ brandCheckboxesContainer.appendChild(div);
+
+
+
+ });
+
+
+
+ }
+
+
+
+
+
+
+
+ function filterByBrand() {
+
+
+
+ const productItems = document.querySelectorAll('.deal-card');
+
+
+
+ const selectedBrands = Array.from(document.querySelectorAll('.brand-checkbox:checked')).map(checkbox => checkbox.value.toLowerCase());
+
+
+
+
+
+
+
+ productItems.forEach(productItem => {
+
+
+
+ const brandName = productItem.querySelector('.brand-name').textContent.toLowerCase();
+
+
+
+ if (selectedBrands.length === 0 || selectedBrands.includes(brandName)) {
+
+
+
+ productItem.classList.remove('hide');
+
+
+
+ } else {
+
+
+
+ productItem.classList.add('hide');
+
+
+
+ }
+
+
+
+ });
+
+
+
+ }
+
+
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+
+
+ createBrandCheckboxes();
+
+
+
+ const brandCheckboxes = document.querySelectorAll('.brand-checkbox');
+
+
+
+ brandCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterByBrand));
+
+
+
+ });
+
+
+
+
+
+
+
+ // Category filter checkboxes functionality
+
+
+
+ function createCategoryCheckboxes() {
+
+
+
+ const categories = [...new Set(Array.from(document.querySelectorAll('.category-field')).map(el => el.textContent.trim()))];
+
+
+
+ const categoryCheckboxesContainer = document.getElementById('categoryCheckboxes');
+
+
+
+ categories.forEach(category => {
+
+
+
+ const checkbox = document.createElement('input');
+
+
+
+ checkbox.type = 'checkbox';
+
+
+
+ checkbox.id = `category_${category}`;
+
+
+
+ checkbox.value = category;
+
+
+
+ checkbox.classList.add('category-checkbox');
+
+
+
+ const label = document.createElement('label');
+
+
+
+ label.htmlFor = `category_${category}`;
+
+
+
+ label.textContent = category;
+
+
+
+ const div = document.createElement('div');
+
+
+
+ div.appendChild(checkbox);
+
+
+
+ div.appendChild(label);
+
+
+
+ categoryCheckboxesContainer.appendChild(div);
+
+
+
+ });
+
+
+
+ }
+
+
+
+
+
+
+
+ function filterByCategory() {
+
+
+
+ const productItems = document.querySelectorAll('.deal-card');
+
+
+
+ const selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(checkbox => checkbox.value.toLowerCase());
+
+
+
+
+
+
+
+ productItems.forEach(productItem => {
+
+
+
+ const categoryName = productItem.querySelector('.category-field').textContent.toLowerCase();
+
+
+
+ if (selectedCategories.length === 0 || selectedCategories.includes(categoryName)) {
+
+
+
+ productItem.classList.remove('hide');
+
+
+
+ } else {
+
+
+
+ productItem.classList.add('hide');
+
+
+
+ }
+
+
+
+ });
+
+
+
+ }
+
+
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+
+
+ createCategoryCheckboxes();
+
+
+
+ const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
+
+
+
+ categoryCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterByCategory));
+
+
+
+ });
+
+
+
+ 
+
+
+
+ 
+
+
+
+ function updatePriceRange() {
+
+
+
+ const priceRange = document.getElementById('priceRange');
+
+
+
+ const minPriceValue = document.getElementById('minPriceValue');
+
+
+
+ const maxPriceValue = document.getElementById('maxPriceValue');
+
+
+
+ const selectedPriceValue = document.getElementById('selectedPriceValue');
+
+
+
+
+
+
+
+ const minPrice = parseInt(priceRange.min);
+
+
+
+ const maxPrice = parseInt(priceRange.max);
+
+
+
+ const selectedValue = parseInt(priceRange.value);
+
+
+
+
+
+
+
+ minPriceValue.textContent = minPrice.toLocaleString(); // Format min price with commas
+
+
+
+ maxPriceValue.textContent = maxPrice.toLocaleString() + "+"; // Format max price with commas and append "+"
+
+
+
+ selectedPriceValue.textContent = selectedValue.toLocaleString(); // Display selected value
+
+
+
+ }
+
+
+
+
+
+
+
+ function filterByPrice() {
+
+
+
+ const productItems = document.querySelectorAll('.deal-card');
+
+
+
+ const priceRange = document.getElementById('priceRange');
+
+
+
+ const selectedMinPrice = parseInt(priceRange.value);
+
+
+
+ const selectedMaxPrice = parseInt(priceRange.value) === parseInt(priceRange.max) ? parseInt(priceRange.max) : parseInt(priceRange.value) + 1000;
+
+
+
+
+
+
+
+ productItems.forEach(productItem => {
+
+
+
+ const productPriceText = productItem.querySelector('.price-info').textContent;
+
+
+
+ const productPrice = parseInt(productPriceText.replace(/[^\d.]/g, '')); // Extract the numeric price value
+
+
+
+
+
+
+
+ if (productPrice >= selectedMinPrice && productPrice <= selectedMaxPrice) {
+
+
+
+ productItem.classList.remove('hide');
+
+
+
+ } else {
+
+
+
+ productItem.classList.add('hide');
+
+
+
+ }
+
+
+
+ });
+
+
+
+ }
+
+
+
+
+
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+
+
+ updatePriceRange(); // Update price range initially
+
+
+
+ });
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+</script>
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	<!-- google languages script -->
+
+
+
+	<script type="text/javascript">
+
+
+
+	function googleTranslateElementInit() {
+
+
+
+	new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+
+
+
+	}
+
+
+
+	</script>
+
+
+
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+</body>
+
+
+
+</html>

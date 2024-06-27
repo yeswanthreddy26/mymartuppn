@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit New Arrival</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body
+        {
+        	background-color:#ABB2B9;
+        }
+</style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Edit New Arrival</h1>
+    <!-- Form for editing a card -->
+    <form action="/Admin/editnewarrival" method="post" enctype="multipart/form-data" class="mt-3">
+        <input type="hidden" name="id" th:value="${newarrival.id}">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" name="title" th:value="${newarrivalDto.title}" required>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" name="description" rows="5" required th:text="${newarrivalDto.description}"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Image</label>
+            <input type="file" class="form-control-file" name="imageFile">
+        </div>
+        <button type="submit" class="btn btn-primary">Update New Arrival</button>
+    </form>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
